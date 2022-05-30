@@ -1,0 +1,721 @@
+---
+title: "COVID-19 Total Cases and Estimates of Active Cases"
+author: "C. Lange, Department of Economics, California State Polytechnic University, Pomona"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    number_sections: yes
+    theme: cerulean
+    highlight: kate
+    toc: yes
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+  pdf_document:
+    toc: yes
+  word_document:
+    toc: yes
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(knitr)
+library(plotly)
+library(cowplot)
+read_chunk("ScriptMain.R")
+```
+
+```{r Setup, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+
+```
+
+
+```{r child="../Header.txt"}
+
+```
+
+# Introduction
+
+```{r child="../Intro.txt"}
+
+```
+
+# `r CurrentState`
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCasesState)
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCasesState)
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCasesState)
+```
+
+## Daily %-Change in Activ Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCasesState)
+```
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCasesState+labs(title=" "),
+          PlotNewCasesState+labs(title=" "),
+          PlotEstActCasesState+labs(title=" "),
+          PlotGrowthRateEstActCasesState+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+
+```
+
+# `r CurrentCounties[1]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[1]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[1]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[1]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[1]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[1]]+labs(title=" "),
+          PlotNewCases[[1]]+labs(title=" "),
+          PlotEstActCases[[1]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[1]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
+
+# `r CurrentCounties[2]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[2]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[2]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[2]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[2]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[2]]+labs(title=" "),
+          PlotNewCases[[2]]+labs(title=" "),
+          PlotEstActCases[[2]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[2]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
+
+# `r CurrentCounties[3]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[3]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[3]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[3]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[3]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[3]]+labs(title=" "),
+          PlotNewCases[[3]]+labs(title=" "),
+          PlotEstActCases[[3]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[3]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
+
+# `r CurrentCounties[4]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[4]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[4]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[4]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[4]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[4]]+labs(title=" "),
+          PlotNewCases[[4]]+labs(title=" "),
+          PlotEstActCases[[4]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[4]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
+
+# `r CurrentCounties[5]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[5]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[5]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[5]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[5]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[5]]+labs(title=" "),
+          PlotNewCases[[5]]+labs(title=" "),
+          PlotEstActCases[[5]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[5]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
+
+# `r CurrentCounties[6]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[6]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[6]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[6]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[6]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[6]]+labs(title=" "),
+          PlotNewCases[[6]]+labs(title=" "),
+          PlotEstActCases[[6]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[6]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
+
+# `r CurrentCounties[7]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[7]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[7]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[7]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[7]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[7]]+labs(title=" "),
+          PlotNewCases[[7]]+labs(title=" "),
+          PlotEstActCases[[7]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[7]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
+
+# `r CurrentCounties[8]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[8]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[8]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[8]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[8]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[8]]+labs(title=" "),
+          PlotNewCases[[8]]+labs(title=" "),
+          PlotEstActCases[[8]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[8]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
+
+# `r CurrentCounties[9]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[9]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[9]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[9]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[9]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[9]]+labs(title=" "),
+          PlotNewCases[[9]]+labs(title=" "),
+          PlotEstActCases[[9]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[9]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
+
+# `r CurrentCounties[10]` County
+
+
+## Accumulated Cases (Active and Not-Active)
+
+```{r child="../TotalCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotTotalCases[[10]])
+```
+
+## Daily New Cases
+
+```{r child="../NewCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotNewCases[[10]])
+```
+
+## Predicted Active Cases
+
+```{r child="../EstActiveCases.txt"}
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotEstActCases[[10]])
+```
+
+## Daily %-Change in Active Cases
+
+```{r child="../PercGrowthEstActiveCases.txt"}
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplotly(PlotGrowthRateEstActCases[[10]])
+```
+
+
+## Summary Charts
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+plot_grid(PlotTotalCases[[10]]+labs(title=" "),
+          PlotNewCases[[10]]+labs(title=" "),
+          PlotEstActCases[[10]]+labs(title=" "),
+          PlotGrowthRateEstActCases[[10]]+labs(title=" "),
+          labels = c("Accumulated Cases",
+                     "New Cases",
+                     "Active Cases",
+                     "%-Growth Active Cases"), size=10,
+    ncol=2, nrow=2)
+```
